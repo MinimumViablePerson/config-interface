@@ -1,12 +1,19 @@
 export const makeContentUrl = ({ owner, repo, path }) =>
   `https://api.github.com/repos/${owner}/${repo}/contents/${path}`
 
+const trace = label => data => {
+  console.log(`${label}: `, data)
+  return data
+}
+
 export const getUser = () =>
   fetch('https://api.github.com/user', {
     headers: {
       Authorization: `token ${localStorage.token}`
     }
-  }).then(resp => resp.json())
+  })
+    .then(resp => resp.json())
+    .then(trace('user'))
 
 export const getFile = ({ owner, repo, path }) =>
   fetch(makeContentUrl({ owner, repo, path }), {

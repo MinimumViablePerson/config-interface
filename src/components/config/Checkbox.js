@@ -7,7 +7,7 @@ const Checkbox = ({ title, field, value, handleChange, disabled }) => {
     <div>
       <FormControlLabel
         disabled={disabled}
-        control={<MUICheckbox checked={value} />}
+        control={<MUICheckbox style={{ marginLeft: 10 }} checked={value} />}
         label={title}
         labelPlacement="start"
         onChange={() => handleChange(field, !value)}

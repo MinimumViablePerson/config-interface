@@ -14,7 +14,7 @@ const SignInButton = () => {
 
   return (
     <Button
-      style={{ textDecoration: 'none', marginLeft: 10 }}
+      style={{ textDecoration: 'none', marginLeft: 25, width: 200 }}
       variant="contained"
       color="secondary"
       onClick={handleClick}

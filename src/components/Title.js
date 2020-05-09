@@ -9,18 +9,31 @@ import SignOutButton from './SignOutButton'
 const Title = ({ user, signOut }) => {
   return (
     <div>
-      <AppBar position="static">
+      <AppBar style={{ paddingBottom: 15 }} position="static">
         <Toolbar>
           <Typography variant="h6">Config Interface Project</Typography>
-          {user ? (
-            <Typography style={{ marginLeft: 10 }} variant="body1">
-              Welcome back {user.name}
-              <SignOutButton signOut={signOut} />
-            </Typography>
-          ) : (
-            <SignInButton />
-          )}
         </Toolbar>
+        {user ? (
+          <Typography
+            style={{ marginLeft: 25, display: 'flex', alignItems: 'center' }}
+            variant="body1"
+          >
+            <img
+              style={{
+                height: 30,
+                width: 30,
+                borderRadius: '50%',
+                marginRight: 10
+              }}
+              alt=""
+              src={user.avatar_url}
+            />
+            {user.login}
+            <SignOutButton signOut={signOut} />
+          </Typography>
+        ) : (
+          <SignInButton />
+        )}
       </AppBar>
     </div>
   )

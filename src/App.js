@@ -31,7 +31,7 @@ const App = () => {
     <React.Fragment>
       <CssBaseline />
       <Title user={user} signOut={signOut} />
-      <div style={{ padding: 10 }}>
+      <div style={{ padding: '0  10px' }}>
         <Route exact path="/">
           <Home />
         </Route>

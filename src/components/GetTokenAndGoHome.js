@@ -1,7 +1,7 @@
+import { useEffect } from 'react'
 import { useHistory, useLocation } from 'react-router-dom'
 
 import { getToken } from '../github'
-import { useEffect } from 'react'
 
 const GetTokenAndGoHome = ({ signIn, user }) => {
   const history = useHistory()

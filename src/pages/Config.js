@@ -5,12 +5,12 @@ import Button from '@material-ui/core/Button'
 import Link from '@material-ui/core/Link'
 
 import Checkbox from '../components/config/Checkbox'
-import Select from '../components/config/Select'
+import TextField from '../components/config/TextField'
 import { getFile, updateFile, makeContentUrl } from '../github'
 
 const fieldComponents = {
   boolean: Checkbox,
-  select: Select
+  string: TextField
 }
 
 const updateConfig = (config, { payload: { field, value } }) => ({
@@ -84,7 +84,7 @@ const Config = ({ user }) => {
   if (status === 'file not found') return <h3>File not found.</h3>
 
   return (
-    <>
+    <div>
       <h2>
         Now {user ? 'editing' : 'viewing'}:{' '}
         <Link
@@ -117,7 +117,7 @@ const Config = ({ user }) => {
       >
         {user ? 'SAVE CHANGES' : 'SIGN IN TO MAKE CHANGES'}
       </Button>
-    </>
+    </div>
   )
 }
 
